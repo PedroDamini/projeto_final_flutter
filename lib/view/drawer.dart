@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meuapp/view/feriados_page.dart';
+import 'package:meuapp/view/home_page.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({super.key});
@@ -26,7 +27,14 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.school),
             title: const Text('Professores'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).pop(),
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => HomePage()
+                )
+              )
+            },
           ),
           ListTile(
             leading: const Icon(Icons.calendar_today),
